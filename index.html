@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MATH GAME</title>
+    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil|Schoolbell|Beth+Ellen&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onload = "followMouse();">
+<button id="playpause"></button>
+
+<div class="centered-wrapper"> <!-- centered wrapper -->
+
+    <!-- GAME MENU -->
+    <div id="menu" class="centered-inner">
+        <div id="title1" class="title"> Bikini Bottom Math Game</div>
+        <div id="subtitles">Select your level then press start!</div>
+        <div class="levels">
+            <button type = "button" id = "lvl1"> <span class = "lvlFont">LEVEL 1 </span> <br> <span class = "gameFont">ADDITION</span>
+                <br> <span class = "exampleFont"> EXAMPLE: 8 + 3 = 11</span> </button>
+            <button type = "button" id = "lvl2"> <span class = "lvlFont">LEVEL 2 </span><br><span class = "gameFont">SUBSTRACTION</span>
+                <br> <span class = "exampleFont">EXAMPLE: 8 - 3 = 5</span></button>
+            <button type = "button" id = "lvl3"> <span class = "lvlFont">LEVEL 3</span> <br><span class = "gameFont"> DIVISION</span>
+                <br><span class = "exampleFont"> EXAMPLE: 8 / 2 = 4</span></button>
+        </div>
+        <div class = "game_options">
+            <button type = "button" id = "startBtn">Start</button>
+            <button type = "button" class = "Btn" id="rulesBtn">Rules</button>
+        </div>
+    </div>
+
+    <!-- RULES -->
+    <div id="rules" class="centered-inner" style="display: none">
+        <h2>Rules:</h2>
+        <ul>
+            <li>Select a level and enter your name!</li>
+            <li>Click on the correct answer</li>
+            <li>Your score goes up if you're right</li>
+            <li>Your score goes down if you're wrong</li>
+        </ul>
+        <button type = "button" class = "Btn" id = "returnBtn">Return</button>
+    </div>
+
+    <!-- PLAYER SELECTION -->
+    <div id="prompt" class="centered-inner" style="display: none">
+        <form id="player">
+            <h2>Enter your name: </h2>
+            <input type="text" id="name">
+            <h2>Enter your age: </h2>
+            <input type="number" id="age">
+            <div id="bcont">
+                <button type="button" id="play">Play!</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="endgame" class="centered-inner" style="display: none">
+        <h2>Game Over!</h2>
+        <ul>
+            <li id="endName"></li>
+            <li id="endAge"></li>
+            <li id="endScore"></li>
+            <li id="endMiss"></li>
+        </ul>
+        <button type = "button" class = "Btn" id = "returnBtnEnd">Return</button>
+    </div>
+
+    <div id="transition" class="centered-inner" style="display: none">
+        <h2 class="Btn">Next Level: <span id="countdown">5</span></h2>
+    </div>
+
+    <!-- SCORE -->
+    <div id="game" class="centered-inner" style="display: none">
+        <div class ="wrap">
+            <div id="info">
+                <div id="title" class="title"></div>
+                <div id="correctWrong" class="score-text" style="display:none;">Correct or Wrong</div>
+                <div id="message" class="score-text">Choose answer</div>
+                <div id="score" class="score-text">Score: 0</div>
+                <div id="miss" class="score-text">Missed: 0</div>
+                <div id="time" class="score-text">Time: <span id="timer"></span></div>
+            </div>
+            <div id="question"></div>
+            <div id="answer"></div>
+            <div class="wrong"></div>
+            <div class="wrong"></div>
+            <div class="wrong"></div>
+            <div class="wrong"></div>
+            <div class="wrong"></div>
+            <div class="wrong"></div>
+            <div class="wrong"></div>
+            <img src="images/sponge.png" id="sponge">
+        </div>
+    </div>
+</div>
+
+<audio controls loop id="music">
+  <source src="music/background music.mp3" type="audio/mpeg">
+</audio>
+<script src="script.js"></script>
+</body>
+</html>

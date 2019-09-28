@@ -1,0 +1,464 @@
+html {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image:url("images/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    cursor: url(images/cursor2.png), auto;
+    font-family: "cartoon";
+}
+
+@font-face {
+    font-family: "cartoon";
+    src:url(font/Chewy-Regular.ttf);
+}
+
+.wrapper {
+    /*display: grid;*/
+    min-height: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+#game {
+    display: none;
+}
+
+.title{
+    font-family: 'Schoolbell', cursive;
+    color:rgb(218, 201, 168);
+    font-size: 3rem;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+    padding-bottom: 1rem;
+}
+
+#subtitles{
+    font-family: 'Allerta Stencil', sans-serif;
+    color:#184E96;
+    font-size: 1.75rem;
+    font-weight: bolder;
+    padding-bottom: 5rem;
+}
+
+.levels
+{
+    grid-template-columns: 30% 5% 30% 5% 30%;
+    text-align: center;
+    grid-template-areas: "lvl1 . lvl2 . lvl3";
+    display: grid;
+    padding-bottom: 4rem;
+
+}
+
+#lvl1
+{
+    grid-area: lvl1;
+    display: block;
+    font-size: 1.75rem;
+    line-height: 2.75rem;
+    background-image: url(images/mm_lev_1.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding: 0;
+    border-style: none;
+    border-radius: 6rem;
+    border-color:yellow;
+    border-width:0.5rem;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    overflow: hidden;
+    height: 25vh;
+    padding-top: 1.5rem;
+    cursor: inherit;
+}
+
+#lvl2
+{
+    grid-area: lvl2;
+    display: block;
+    font-size: 1.75rem;
+    line-height: 2.75rem;
+    background-image: url(images/mm_lev_2.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding: 0;
+    border-style: none;
+    border-radius: 6rem;
+    border-color:yellow;
+    border-width:0.5rem;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    overflow: hidden;
+    height: 25vh;
+    padding-top: 1.5rem;
+    cursor: inherit;
+}
+
+#lvl3
+{
+    grid-area: lvl3;
+    display: block;
+    font-size: 1.75rem;
+    line-height: 2.75rem;
+    background-image: url(images/mm_lev_3.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    padding: 0;
+    border-style: none;
+    border-radius: 6rem;
+    border-color:yellow;
+    border-width:0.5rem;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    overflow: hidden;
+    height: 25vh;
+    padding-top: 2rem;
+    cursor: inherit;
+}
+
+.lvlFont
+{
+    font-family: 'Allerta Stencil', sans-serif;
+    color: #E57A2C;
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+
+.gameFont
+{
+    font-family: 'Schoolbell', cursive;
+    color:#30e35f;
+    font-weight: bolder;
+    font-size: 2.5rem;
+
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+
+}
+
+.exampleFont
+{
+    font-family: "cartoon";
+    font-size: 2rem;
+    color: black;
+
+}
+
+.game_options
+{
+    grid-template-areas: ". startBtn . rulesBtn .";
+    display: grid;
+}
+
+#startBtn
+{
+    grid-area: startBtn;
+    border: none;
+    font-family: 'Schoolbell', cursive;
+    font-weight: bold;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    color:#F2B92C;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+
+    display: inline-block;
+    overflow: hidden;
+
+    height: 15vh;
+    font-size: 5rem;
+    cursor: inherit;
+}
+
+#rulesBtn{
+    grid-area: rulesBtn;
+}
+
+.Btn
+{
+    display:inline-block;
+    font-family: 'Schoolbell', cursive;
+
+    font-weight: bold;
+    font-size: 5rem;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    overflow: hidden;
+    color:#F2B92C;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+    cursor: inherit;
+}
+
+#rules, #endgame{
+    font-size:5vh;
+}
+
+#rules > h2, #endgame > h2{
+    font-size: 6vh;
+}
+
+#rules{
+    font-size:5vh;
+}
+
+#rules > h2{
+    font-size: 6vh;
+}
+
+#player{
+
+    padding: 3vh;
+    margin:auto;
+    text-align:center;
+}
+
+#name{
+    width:40vw;
+    height:4vh;
+    font-family: "cartoon";
+    font-size:3vh;
+    padding:1rem;
+    border:none;
+    border-radius:2rem;
+}
+
+#age{
+    width:10vw;
+    height:4vh;
+    font-family: "cartoon";
+    font-size:3vh;
+    padding:3vh;
+    border:none;
+    border-radius:2rem;
+}
+
+#bcont{
+    padding: 3rem;
+}
+
+#play{
+    padding:1rem;
+    border:none;
+    border-radius:2rem;
+    background-color:#fc8b00;
+    font-family: "cartoon";
+    font-size:4vh;
+    box-shadow: 5px 10px #272727;
+    cursor: inherit;
+}
+
+h2{
+    font-size:4vh;
+}
+
+
+#sponge{
+    z-index:-1;
+    display:block;
+    position:absolute;
+    bottom:10px;
+    left:20px;
+    width:10vw;
+    height:30vh;
+}
+
+#question {
+    z-index:30;
+    font-size: 4rem;
+    pointer-events: none;
+    padding-top:5rem;
+}
+
+.score-text {
+    font-size: 2.5rem;
+}
+
+#answer {
+    background-image:url("images/jellyfish.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display:block;
+    position:absolute;
+    text-align: center;
+    width:10vw;
+    height:10vw;
+    /*top:500px;
+    left:1000px;*/
+    z-index:1;
+    font-size: 5vw;
+    color:white;
+    transition: linear 3000ms;
+    padding-top:2rem;
+}
+
+#info{
+    padding:5vh;
+    text-align: center;
+    position:absolute;
+    z-index:20;
+}
+
+
+
+.wrong {
+    background-image:url("images/jellyfish.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display:block;
+    position:absolute;
+    text-align: center;
+    width:10vw;
+    height:10vw;
+    /*top:500px;
+    left:1000px;*/
+    font-size: 5vw;
+    color:white;
+    transition: linear 3000ms;
+    padding-top:2rem;
+
+}
+
+#question {
+    background: none;
+    display:inline;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -10px 0 0 -10px;
+    pointer-events: none;
+}
+
+.wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+}
+
+#music{
+    display:none;
+}
+
+#playpause{
+    background:none;
+    border:none;
+    background-image:url("images/music.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: absolute;
+    right:1vw;
+    top:1vh;
+    width:5vw;
+    height:5vw;
+    cursor: inherit;
+    z-index:3;
+}
+
+/* ========================= CSS RESPONSIVE ========================= */
+@media (min-width: 50px) and (max-width: 768px) {
+    body{
+        background-size:cover;
+        height:100vh;
+    }
+    .levels
+    {
+        grid-template-columns: auto;
+        text-align: center;
+        grid-template-areas:
+                ". lvl1 . "
+                ". lvl2 . "
+                ". lvl3 .";
+        display: grid;
+        padding-bottom: 4rem;
+    }
+    #lvl1
+    {
+        padding: 3rem;
+        border-radius: 4rem;
+    }
+
+    #lvl2
+    {
+        padding: 3rem;
+        border-radius: 4rem;
+    }
+
+    #lvl3
+    {
+        padding: 3rem;
+        border-radius: 4rem;
+    }
+    #playpause{
+        width:15vw;
+        height:15vw;
+    }
+    #name{
+        font-size:2rem;
+
+    }
+    #age{
+        font-size:2rem;
+    }
+    .title{
+        font-size: 2rem;
+
+    }
+    score-text {
+        font-size: 2rem;
+    }
+    .wrong{
+        width:20vw;
+        height:20vw;
+        font-size:3rem;
+    }
+    #answer{
+        width:20vw;
+        height:20vw;
+        font-size:3rem;
+    }
+    #sponge{
+        display:none;
+    }
+}
+
+.centered-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.centered-inner {
+    display: block;
+    overflow: hidden;
+    width: 70%;
+    text-align: center;
+}
+
